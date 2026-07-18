@@ -1,39 +1,35 @@
 # Hermes Team Canvas
 
-Multiplayer infinite multimedia whiteboard for Hermes.
+A multiplayer infinite multimedia whiteboard plugin for [Hermes Agent](https://github.com/NousResearch/hermes-agent), built on [Obsidian Canvas](https://obsidian.md/canvas).
 
-## What Is This
+**Status:** Research phase
+**License:** MIT
+**Maintained by:** OrendaD
 
-A Hermes plugin that adds a collaborative whiteboard to agent sessions.
-Agents and humans draw, annotate, and iterate on visual ideas together
-in real time — architecture diagrams, mind maps, flowcharts, sketches.
+## What Is This?
 
-## Status
+Hermes agents and humans collaborate on an infinite whiteboard. Agents are first-class citizens on the canvas — spatial, visible, interactive participants. Not sidebar chatbots. Not passive helpers.
 
-Background research phase. No code yet.
+## Quick Links
 
-## Architecture (Draft)
+| Document | What It Covers |
+|----------|---------------|
+| [Architecture](architecture/README.md) | Design vision and principles |
+| [Interaction Models](architecture/interaction-models.md) | The 6-pattern framework |
+| [Research Index](research/README.md) | Everything we've learned about the landscape |
+| [Interaction Pattern Matrix](research/interaction-pattern-matrix.md) | 10 plugins classified by interaction pattern |
+| [Status](STATUS.md) | What's done, in progress, blocked |
+| [Contributing](CONTRIBUTING.md) | How to contribute |
 
-```
-hermes-team-canvas/
-├── plugin/           # Hermes plugin entry point
-│   ├── __init__.py
-│   └── plugin.py
-├── server/           # WebSocket collaboration server
-├── canvas/           # Canvas engine (rendering, tools, state)
-├── frontend/         # UI layer (HTML/JS, Hermes desktop integration)
-├── docs/             # Research, references, decisions
-└── scripts/          # Dev tooling
-```
+## How to Use This Repo
 
-## Research Needed
+- **Want to understand what we're building?** Start with [Architecture](architecture/README.md)
+- **Want to understand the design decisions?** Check [ADRs](adr/)
+- **Want to understand the landscape?** Start with [Research](research/README.md)
+- **Want to contribute?** Read [Contributing](CONTRIBUTING.md) first
 
-- [ ] Hermes plugin API surface (hooks, commands, desktop integration)
-- [ ] Collaboration protocols (CRDT vs OT vs custom)
-- [ ] Canvas rendering options (SVG, Canvas2D, WebGL)
-- [ ] State sync architecture
-- [ ] Existing multiplayer whiteboard references (tldraw, Excalidrop, etc.)
+## Community
 
-## License
-
-MIT
+- **Discord:** [Link TBD]
+- **Issues:** [GitHub Issues](https://github.com/OrendaD/Hermes-Team-Canvas/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/OrendaD/Hermes-Team-Canvas/discussions)
