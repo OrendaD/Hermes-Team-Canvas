@@ -79,6 +79,32 @@ Moving a node into a Visual Frame MUST NOT change its Collection membership unle
 
 **Implementation:** Agent nodes carry status metadata. "Processed: partial — OCR failed on page 5." Visible in node properties.
 
+## Additional Transferable Concepts
+
+### 6. Hydration Lifecycle
+Nodes go through states: COLD (metadata only) → PREVIEWABLE (thumbnail exists) → VISIBLE (passive preview loaded) → WARM (data prefetched) → INTERACTIVE (full viewer active) → SUSPENDED (state saved, runtime released). Agent-created nodes should start lightweight and hydrate on demand.
+
+### 7. Passive By Default
+Every source node MUST have a lightweight passive representation that doesn't require its full viewer. Agent-created nodes start as simple text cards, not full interactive elements. Hydrate when the human focuses on them.
+
+### 8. Adapter Architecture
+Three contracts: Asset Adapter (format probing, metadata), Representation Processor (thumbnails, text extraction), Interactive Viewer (rendering, navigation, annotation). Agent skill that creates canvas nodes could follow this pattern — probe the vault note, generate a representation, then place the interactive node.
+
+### 9. Search-to-Canvas Workflow
+User searches, gets results, creates an Excerpt, places it on canvas, adds to Collection, creates subgraph from results. Agent searches vault, finds relevant content, places it on canvas as a connected subgraph.
+
+### 10. Operation Journal
+Durable change history for undo/redo, crash recovery, debugging, migration validation. Whiteboards express and refine concepts. As context accumulates, the representation evolves. The journal supports concept evolution — previous states preserved, not erased, so the canvas can grow with understanding.
+
+### 11. Separation of Critical vs Rebuildable Data
+User-created state is critical. Derived representations (thumbnails, indexes, embeddings) are rebuildable. The canvas file is critical (human-created + agent-suggested structure). Agent-generated summaries are rebuildable.
+
+### 12. Layered Compatibility
+For every source, try in order: native display → standard preview → metadata/icon → preservation of original → clear explanation of unsupported. When an agent links to a vault note it can't fully render, degrade gracefully with a clear status indicator.
+
+### 13. Visual Connector vs Semantic Relationship
+Visual connectors are view-local graphical relations — they don't assert canonical semantic relationships. Semantic relationships are project-wide edges with types (supports, contradicts, caused, refers to). Agent-drawn edges on canvas are visual connectors by default. Human or agent can upgrade them to semantic relationships.
+
 ## What We Should NOT Transfer
 
 | Concept | Why Not |
