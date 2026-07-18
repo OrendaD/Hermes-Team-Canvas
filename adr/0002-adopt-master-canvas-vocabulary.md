@@ -23,8 +23,8 @@ A view-local spatial container. Moving an object into a Visual Frame does not ch
 ### Locator
 A precise position or range inside a source. Types include text range, page+rectangle, time range, image region, block reference. In our context: `[[note#heading]]`, `[[note#^block]]`, and richer references for non-text sources.
 
-### Suggested vs Confirmed
-AI-generated content (links, entities, clusters, summaries) is visually and structurally distinct from user-confirmed content. In our context: agent nodes on canvas are marked as suggestions until human confirms.
+### Suggested vs Confirmed (Confirmation Lifecycle)
+AI-generated content (links, entities, clusters, summaries) is visually and structurally distinct from user-confirmed content. This is a lifecycle — suggestions are created by agents, then confirmed or rejected by humans — not a choice between two equal options. In our context: agent nodes on canvas are marked as suggestions until human confirms.
 
 ### One Canonical Graph
 All assets belong to one canonical project graph. Views are projections, not independent sources of truth. In our context: the vault is the canonical graph. Canvas files are projections of vault relationships.
